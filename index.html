@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Cats</title>
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
+  <script type="text/javascript" src="cat.js"></script>
+  <script type="text/javascript" src="view.js"></script>
+  <script type="text/javascript" src="controller.js"></script>
+
+  <style>
+    label { display: inline-block; width: 80px;}
+  </style>
+
+</head>
+<body>
+
+<form id="new-cat-form">
+  <div><label>Name:</label><input id="name"></div>
+  <div><label>Breed id:</label><input id="breed_id"></div>
+  <div><label>Image url:</label><input id="image_url"></div>
+  <div><label>Born:</label><input type="date" id="born_on"></div>
+  <input type="Submit" value="save">
+</form>
+
+<div id="cat-div"></div>
+
+<script type="x-handlebars-template" id="tmpl">
+  {{#each cats}}
+     <div>
+       <h3>{{name}}</h3>
+       <div class="detail">
+         <img src="{{image_url}}">
+         {{breed_name}}
+       </div>
+     </div>
+  {{/each}}
+
+</script>
+
+</body>
+</html>
